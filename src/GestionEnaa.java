@@ -51,6 +51,7 @@ public class GestionEnaa {
     private static void gererApprenants() {
         System.out.println("\n Gestion des Apprenants ");
 
+
     }
 
     private static void gererFormateurs() {
