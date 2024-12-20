@@ -49,24 +49,23 @@ public class GestionEnaa {
 
 
     private static void gererApprenants() {
-        System.out.println("\n--- Gestion des Apprenants ---");
+        System.out.println("\n Gestion des Apprenants ");
 
     }
 
     private static void gererFormateurs() {
-        System.out.println("\n--- Gestion des Formateurs ---");
+        System.out.println("\n Gestion des Formateurs ");
 
     }
 
     private static void gererClasses() {
-        System.out.println("\n--- Gestion des Classes ---");
+        System.out.println("\n Gestion des Classes ");
 
     }
 
     private static void associerApprenantsFormateurs() {
-        System.out.println("\n--- Association Apprenants et Formateurs aux Classes ---");
+        System.out.println("\n Association");
+
 
     }
 }
-
-

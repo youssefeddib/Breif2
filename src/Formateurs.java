@@ -1,48 +1,46 @@
-public class Formateurs {
-    String nom;
-    String prenom;
-    String spicialite;
-    String email;
-    int salaire;
+class Formateur {
+    private int id;
+    private String nom;
+    private String prenom;
+    private String specialite;
+    private String email;
+    private double salaire;
 
+    public Formateur(int id, String nom, String prenom, String specialite, String email, double salaire) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.specialite = specialite;
+        this.email = email;
+        this.salaire = salaire;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public String getNom() {
-        return nom;
     }
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setSpicialite(String spicialite) {
-        this.spicialite = spicialite;
-    }
-
-    public String getSpicialite() {
-        return spicialite;
+    public void setSpecialite(String specialite) {
+        this.specialite = specialite;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setSalaire(int salaire) {
+    public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
 
-    public int getSalaire() {
-        return salaire;
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Nom: " + nom + ", Prénom: " + prenom + ", Spécialité: " + specialite + ", Email: " + email + ", Salaire: " + salaire;
     }
 }
