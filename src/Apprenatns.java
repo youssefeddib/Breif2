@@ -180,3 +180,12 @@ private static void supprimerApprenant(List<Apprenant> apprenants) {
         System.out.println("Aucun apprenant trouvé avec cet ID.");
     }
 }
+private static void afficherApprenants(List<Apprenant> apprenants) {
+    if (apprenants.isEmpty()) {
+        System.out.println("Aucun apprenant à afficher.");
+    } else {
+        for (Apprenant apprenant : apprenants) {
+            System.out.println(apprenant);
+        }
+    }
+}
