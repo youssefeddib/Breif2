@@ -88,5 +88,45 @@ class Apprenant {
     private void ajouterApprenant() {
 
     }
-    
+
+}
+private static void ajouterApprenant(List<Apprenant> apprenants) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Entrez l'ID: ");
+    int id = scanner.nextInt();
+    scanner.nextLine();
+    System.out.print("Entrez le nom: ");
+    String nom = scanner.nextLine();
+    System.out.print("Entrez le prénom: ");
+    String prenom = scanner.nextLine();
+    System.out.print("Entrez l'email: ");
+    String email = scanner.nextLine();
+    System.out.print("Entrez le téléphone: ");
+    String telephone = scanner.nextLine();
+
+    Apprenant apprenant = new Apprenant(id, nom, prenom, email, telephone);
+    apprenants.add(apprenant);
+    System.out.println("Apprenant ajouté avec succès !");
+}
+private static void associerApprenantClasse(List<Apprenant> apprenants) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Entrez l'ID de l'apprenant à associer: ");
+    int id = scanner.nextInt();
+
+    boolean trouve = false;
+    for (Apprenant apprenant : apprenants) {
+        if (apprenant.getId() == id) {
+            System.out.println("Apprenant trouvé : " + apprenant);
+            // Exemple simple d'association à une classe
+            System.out.println("L'apprenant " + apprenant.getNom() + " " + apprenant.getPrenom() + " a été associé à une classe.");
+            trouve = true;
+            break;
+        }
+    }
+
+    if (!trouve) {
+        System.out.println("Aucun apprenant trouvé avec cet ID.");
+    }
 }

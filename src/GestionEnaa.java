@@ -70,3 +70,33 @@ public class GestionEnaa {
 
     }
 }
+private static void gererApprenants(Scanner scanner) {
+    System.out.println("\nGestion des Apprenants");
+    System.out.println("1. Ajouter un apprenant");
+    System.out.println("2. Afficher les apprenants");
+    System.out.println("3. Retour");
+    System.out.print("\nVotre choix : ");
+    int choix = scanner.nextInt();
+    scanner.nextLine();  // Consommer le retour à la ligne
+
+    switch (choix) {
+        case 1:
+            System.out.print("Entrez le nom de l'apprenant: ");
+            String nom = scanner.nextLine();
+            System.out.print("Entrez le prénom de l'apprenant: ");
+            String prenom = scanner.nextLine();
+            apprenants.add(new Apprenant(nom, prenom));
+            System.out.println("Apprenant ajouté avec succès.");
+            break;
+        case 2:
+            System.out.println("Liste des apprenants:");
+            for (Apprenant apprenant : apprenants) {
+                System.out.println(apprenant);
+            }
+            break;
+        case 3:
+            return;
+        default:
+            System.out.println("Choix invalide.");
+    }
+}
