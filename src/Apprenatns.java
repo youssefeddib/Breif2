@@ -135,7 +135,7 @@ private static void modifierApprenant(List<Apprenant> apprenants) {
 
     System.out.print("Entrez l'ID de l'apprenant à modifier: ");
     int id = scanner.nextInt();
-    scanner.nextLine(); 
+    scanner.nextLine();
 
     boolean trouve = false;
     for (Apprenant apprenant : apprenants) {
@@ -149,6 +149,28 @@ private static void modifierApprenant(List<Apprenant> apprenants) {
             System.out.print("Entrez le nouveau téléphone: ");
             apprenant.setTelephone(scanner.nextLine());
             System.out.println("Apprenant modifié avec succès !");
+            trouve = true;
+            break;
+        }
+    }
+
+    if (!trouve) {
+        System.out.println("Aucun apprenant trouvé avec cet ID.");
+    }
+}
+private static void supprimerApprenant(List<Apprenant> apprenants) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Entrez l'ID de l'apprenant à supprimer: ");
+    int id = scanner.nextInt();
+
+    boolean trouve = false;
+    Iterator<Apprenant> iterator = apprenants.iterator();
+    while (iterator.hasNext()) {
+        Apprenant apprenant = iterator.next();
+        if (apprenant.getId() == id) {
+            iterator.remove();
+            System.out.println("Apprenant supprimé avec succès !");
             trouve = true;
             break;
         }
