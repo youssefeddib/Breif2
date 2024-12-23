@@ -130,3 +130,31 @@ private static void associerApprenantClasse(List<Apprenant> apprenants) {
         System.out.println("Aucun apprenant trouvé avec cet ID.");
     }
 }
+private static void modifierApprenant(List<Apprenant> apprenants) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Entrez l'ID de l'apprenant à modifier: ");
+    int id = scanner.nextInt();
+    scanner.nextLine(); 
+
+    boolean trouve = false;
+    for (Apprenant apprenant : apprenants) {
+        if (apprenant.getId() == id) {
+            System.out.print("Entrez le nouveau nom: ");
+            apprenant.setNom(scanner.nextLine());
+            System.out.print("Entrez le nouveau prénom: ");
+            apprenant.setPrenom(scanner.nextLine());
+            System.out.print("Entrez le nouveau email: ");
+            apprenant.setEmail(scanner.nextLine());
+            System.out.print("Entrez le nouveau téléphone: ");
+            apprenant.setTelephone(scanner.nextLine());
+            System.out.println("Apprenant modifié avec succès !");
+            trouve = true;
+            break;
+        }
+    }
+
+    if (!trouve) {
+        System.out.println("Aucun apprenant trouvé avec cet ID.");
+    }
+}
